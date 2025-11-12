@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 20px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+    }
+    .status {
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      text-align: center;
+      font-size: 14px;
+    }
+    .status.recording {
+      background-color: #ffebee;
+      color: #c62828;
+      border: 1px solid #ef5350;
+    }
+    .status.idle {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      border: 1px solid #66bb6a;
+    }
+    .status.no-video {
+      background-color: #fff3e0;
+      color: #e65100;
+      border: 1px solid #ff9800;
+    }
+    .controls {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      opacity: 0.9;
+    }
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .btn-start {
+      background-color: #4caf50;
+      color: white;
+    }
+    .btn-stop {
+      background-color: #f44336;
+      color: white;
+    }
+    .info {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+      font-size: 12px;
+      color: #666;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🎵 音频录制器</h1>
+  </div>
+  
+  <div id="status" class="status idle">
+    等待视频播放...
+  </div>
+  
+  <div class="controls">
+    <button id="startBtn" class="btn-start">开始捕获</button>
+    <button id="stopBtn" class="btn-stop" disabled>停止捕获</button>
+  </div>
+  
+  <div class="info">
+    <strong>使用说明：</strong><br>
+    • 仅在B站视频页面（有BV号）时可用<br>
+    • 点击"开始捕获"按钮后，将跳转到视频第0秒<br>
+    • 自动开始录制音频和字幕<br>
+    • 视频结束后自动保存音频（WAV）和字幕（SRT）文件<br>
+    • 文件名使用BV号命名：BVxxxxx.wav 和 BVxxxxx.srt
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
+

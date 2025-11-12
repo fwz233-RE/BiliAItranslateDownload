@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "音频录制器",
+  "version": "1.0.0",
+  "description": "从视频中录制音频并保存为音频文件",
+  "permissions": [
+    "tabCapture",
+    "storage",
+    "activeTab",
+    "scripting",
+    "downloads",
+    "notifications"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.bilibili.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
+
