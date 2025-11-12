@@ -82,7 +82,3 @@
 
 - Manifest Version: 3
 - 支持浏览器：Chrome、Edge（Chromium内核）
-
-
-# -B-AI-
-方便各位up直接YouTube分发自己的视频
